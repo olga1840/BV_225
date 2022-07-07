@@ -15,6 +15,7 @@ TODO:
 	код, меняющий местами переменные a и b
 	....
 	cout << a << "\t" << b << endl; //	3	2
+4. Решить все задачи из файла: https://raw.githubusercontent.com/okovtun/BV_225/master/DataTypes/VariablesTask.pdf
 
 TODO:
 1. Выучить теорию!
