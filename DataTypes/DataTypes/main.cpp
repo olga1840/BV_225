@@ -12,4 +12,20 @@ void main()
 	//МАКРООПРЕДЕЛЕНИЙ в Visual Studio
 	cout << INT_MIN << " ... " << INT_MAX << endl;
 	cout << 0 << " ... " << UINT_MAX << endl;
+
+	cout << "float:\n";
+	cout << sizeof(float) << endl;
+	cout << FLT_MIN << " ... " << FLT_MAX << endl;
+
+	cout << "double:\n";
+	cout << sizeof(double) << endl;
+	cout << DBL_MIN << " ... " << DBL_MAX << endl;
+
+	int a;
+	double price;
+	double price_of_coffee;//snake_case_style
+	//case - региср
+	//lower case - нижний регистр (маленькие(строчные) буквы)
+	//upper case - верхний регистр (большие (заглавные) буквы)
+	double 
 }
