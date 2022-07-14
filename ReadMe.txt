@@ -2,6 +2,10 @@ https://github.com/okovtun/BV_225.git
 https://www.youtube.com/watch?v=owJLioIXPds&list=PLeqyOOqxeiIOn6FFT2a2xBVF9UpViJ-WH
 
 TODO:
+Решить все задачи из файла: https://raw.githubusercontent.com/okovtun/BV_225/master/DataTypes/VariablesTask.pdf
+
+
+DONE:
 1. Выучить теорию по типам данных!!!!!!!!!!!!!!!!!!!!!!!!!
 ----------------------------------------------------------
 2. Используя оператор sizeof() и макроопределения Visual Studio

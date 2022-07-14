@@ -21,11 +21,25 @@ void main()
 	cout << sizeof(double) << endl;
 	cout << DBL_MIN << " ... " << DBL_MAX << endl;
 
-	int a;
+	/*int a;
 	double price;
 	double price_of_coffee;//snake_case_style
 	//case - региср
 	//lower case - нижний регистр (маленькие(строчные) буквы)
 	//upper case - верхний регистр (большие (заглавные) буквы)
-	double 
+	double priceOfCoffee;	//Camel case style (Pascal Case Style)
+	//smallCamel
+	//BigCamel
+	cout << price << endl;
+	*/
+	//ПРОИНИЦИАЛИЗИРОВАТЬ
+	//ИНИЦИАЛИЗАЦИЯ - это присвоение начального значения
+
+	double price_of_coffee;
+	int number_of_cups;
+	cout << "Введите стоимость чашки кофе: ";cin >> price_of_coffee;
+	cout << "Введите количество чашек: "; cin >> number_of_cups;
+	double total_price = price_of_coffee * number_of_cups;
+	cout << "С Вас " << total_price << " $\n";
+	//cout << price_of_coffee << endl;
 }
