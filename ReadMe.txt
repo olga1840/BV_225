@@ -2,6 +2,23 @@ https://github.com/okovtun/BV_225.git
 https://www.youtube.com/watch?v=owJLioIXPds&list=PLeqyOOqxeiIOn6FFT2a2xBVF9UpViJ-WH
 
 TODO:
+Что будет выведено на экран в седующиъх случаях:
+1.	int i = 3;
+	i = ++i + ++i;
+	cout << i << endl;
+2.	int i = 3;
+	i = i++ + 1 + ++i * 2;
+	cout << i << endl;
+3.	int i = 3;
+	i = ++i + 1 + ++i *= 2;
+	cout << i << endl;
+4.	int i = 3;
+	i += ++i + 1 + ++i *= 2;
+	cout << i << endl;
+!!!!!!!!!! Все эти задачи нужно решать без Visual Studio, и в VS лишь проверять результат.
+Результаты на каждую задачу прислать в текстовом файле!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+DONE:
 Решить все задачи из файла: https://raw.githubusercontent.com/okovtun/BV_225/master/DataTypes/VariablesTask.pdf
 
 
