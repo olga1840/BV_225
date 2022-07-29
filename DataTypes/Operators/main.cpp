@@ -3,7 +3,8 @@ using namespace std;
 
 //#define ARITHMETICAL_OPERATORS	//1) Арифметические операторы
 //#define ASSIGNMENT_OPERATOR		//2) Оператор присваивания =
-#define INCREMENT_DECREMENT		//3) (++/--)
+//#define INCREMENT_DECREMENT		//3) (++/--)
+#define COMPOUND_ASSIGNMENTS		//4) Составные присваивания
 
 void main()
 {
@@ -43,11 +44,25 @@ void main()
 	a = b + c * 4 - 2 * 4;
 #endif // ASSIGNMENT_OPERATOR
 
-#define INCREMENT_DECREMENT
+#ifdef INCREMENT_DECREMENT
 	int i = 0;
 	++i;	//Prefix increment
 	i++;	//Postfix increment
 	--i;	//Prefix decrement
 	i--;	//Postfix (Suffix) decrement
 #endif
+
+#ifdef COMPOUND_ASSIGNMENTS
+	int a = 2;
+	int b = 3;
+	
+	//a = a + b;//Оператор сложить
+	a += b;		//Оператор ПРИБАВИТЬ
+	//	-=		//Оператор ОТНЯТЬ
+	//	*=
+	//	/=
+	//	%=
+
+#endif // COMPOUND_ASSIGNMENTS
+
 }
