@@ -2,6 +2,12 @@ https://github.com/okovtun/BV_225.git
 https://www.youtube.com/watch?v=owJLioIXPds&list=PLeqyOOqxeiIOn6FFT2a2xBVF9UpViJ-WH
 
 TODO:
+Написать программу "Калькулятор", которая принимает выражение вида
+	2 + 3
+и выдает результат следующим образом:
+	2 + 3 = 5
+
+DONE:
 Что будет выведено на экран в седующиъх случаях:
 1.	int i = 3;
 	i = ++i + ++i;

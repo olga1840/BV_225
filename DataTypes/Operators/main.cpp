@@ -4,7 +4,8 @@ using namespace std;
 //#define ARITHMETICAL_OPERATORS	//1) Арифметические операторы
 //#define ASSIGNMENT_OPERATOR		//2) Оператор присваивания =
 //#define INCREMENT_DECREMENT		//3) (++/--)
-#define COMPOUND_ASSIGNMENTS		//4) Составные присваивания
+//#define COMPOUND_ASSIGNMENTS		//4) Составные присваивания
+#define COMPARISON_OPERATOR		//5) Операторы сравнения
 
 void main()
 {
@@ -65,4 +66,9 @@ void main()
 
 #endif // COMPOUND_ASSIGNMENTS
 
+	cout << (!true == false) << endl;
+	cout << (true || false || false)		<< endl;
+	//		   1   +  0    +    0    = 1
+	cout << (true && true && false)			<< endl;
+	//		  1   *     1  *   0	 =  0
 }
