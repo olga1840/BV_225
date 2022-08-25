@@ -7,6 +7,7 @@ using std::endl;
 //#define TEMPERATURE
 //#define TARGET
 //#define CALC_1
+#define CALC_2
 //define - определить
 //definition - определение
 //#define SWITCH_SYNTAX
@@ -70,6 +71,24 @@ void main()
 		cout << "Error: No operation!" << endl;
 	}
 #endif				//Конец блока
+
+#if defined CALC_2
+	double a, b;
+	char s;	//Sign - знак операции
+	cout << "Введите простое арифметическое выражение: ";
+	cin >> a >> s >> b;
+	switch (s)
+	{
+	case '+':cout << a << " + " << b << " = " << a + b << endl; break;
+	case '-':cout << a << " - " << b << " = " << a - b << endl; break;
+	case '*':cout << a << " * " << b << " = " << a * b << endl; break;
+	case '/':cout << a << " / " << b << " = " << a / b << endl;
+		/*if(b!=0)cout << a << " / " << b << " = " << a / b << endl; 
+		else cout << "Error: На 0 делить нельзя!" << endl;*/
+		break;
+	default: cout << "Error: No operation" << endl;
+	}
+#endif
 
 #ifdef SWITCH_SYNTAX
 	int var = 0;
