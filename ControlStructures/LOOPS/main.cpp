@@ -1,13 +1,17 @@
 ﻿//Loops
 #include<iostream>
+#include<conio.h>	//здесь находится функция _getch()
 //using namespace std;
 using std::cin;
 using std::cout;
 using std::endl;
 
+#define Escape 27
+
 //#define WHILE_1
 //#define WHILE_2
 //#define PALINDROME
+//#define TICKET
 
 void main()
 {
@@ -61,6 +65,7 @@ void main()
 	}
 #endif // PALINDROME
 
+#ifdef TICKET
 	int number;
 	cout << "Введите номер билета, для посадки на рейс: "; cin >> number;
 	int sum1, sum2;
@@ -83,6 +88,17 @@ void main()
 	{
 		cout << "Как-нибудь в другой раз" << endl;
 	}
+#endif // TICKET
+
+	char key;	//эта переменная будет хранить код клавиши
+	do
+	{
+		key = _getch();	//Функция _getch() ожидает нажатие клавиши 
+			//и возвращает ASCII-код нажатой клавиши
+		cout << (int)key << "\t" << key << endl;
+		//(int)key - явное преобразование переменной 'key' в тип данных 'int'
+		//для того чтобы увидеть код нажатой клавиши.
+	} while (key != Escape);
 }
 
 /*
