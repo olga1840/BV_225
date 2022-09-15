@@ -1,14 +1,77 @@
 #include<iostream>
-using namespace std;
+//using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+
+//#define FOR_BASICS
+//#define FACTORIAL
+//#define POWER
+//#define ASCII
 
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef FOR_BASICS
 	int n;
 	cout << "Введите количество итераций: "; cin >> n;
 	for (int i = 0; i < n; i++)
 	{
 		cout << i << "\t";
+	}
+	cout << endl;
+#endif // FOR_BASICS
+
+#ifdef FACTORIAL
+	int n;
+	double f = 1;	//Factorial
+	cout << "Введите число: "; cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
+		cout << i << "! = ";
+		f *= i;
+		cout << f << endl;
+	}
+	cout << endl;
+	cout << n << "! = " << f << endl;
+#endif // FACTORIAL
+
+#ifdef POWER
+	double a;	//Основание степени - это число, которое умножается само на себя.
+	int n;	//Показатель степени
+	double N = 1;	//Степень
+	cout << "Введите основание степени: "; cin >> a;
+	cout << "Введите показатель степени: "; cin >> n;
+	if (n < 0)
+	{
+		a = 1 / a;
+		n = -n;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		N *= a;
+	}
+	cout << N << endl;
+#endif // POWER
+
+#ifdef ASCII
+	cout << "Таблица ASCII-символов:\n";
+	setlocale(LC_ALL, "C");	//Включаем кодировку по умолчанию
+	for (int i = 0; i < 256; i++)
+	{
+		if (i % 16 == 0)cout << endl;
+		cout << (char)i << " ";
+	}
+	cout << endl;
+	setlocale(LC_ALL, "");
+	cout << "Вот и сказочке конец" << endl;
+#endif // ASCII
+
+	int n;
+	cout << "Введите предельное число: "; cin >> n;
+	for (int a = 0, b = 1, c = a + b; a < n; a = b, b = c, c = a + b)
+	{
+		cout << a << "\t";
 	}
 	cout << endl;
 }

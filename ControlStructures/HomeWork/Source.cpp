@@ -1,392 +1,109 @@
-﻿//ChessBoard, Счастливый билетик(if_else и while), палиндром, рекурсивный факториал, преобразователь в двоичные числа
-//Задачи из https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
+﻿#include<Windows.h>
 #include<iostream>
+#include<string>
+#include <math.h>
 using namespace std;
-using std::cout;
-using std::cin;
-using std::endl;
 
-//#define ASCII
-//#define CHESS_BOARD
-#define CHESS_BOARD_BY_STARS
-//#define LUCKY_TICKET_IF_ELSE
-//#define LUCKY_TICKET_WHILE
-//#define PALINDROM
-//#define FACTORIAL_RECOURSE
-//#define BINARY_CODE
-//#define TASK_0
-//#define TASK_1
-//#define TASK_2
-//#define TASK_3
-//#define TASK_4
-//#define TASK_5
+double power(double, int);
+int fibonachi(int);
+bool easy_num(int);
 
-void main()
-{
+//#define FACTORIAL
+//#define POWER
+//define ASCII_16
+//#define FIB_1
+#define FIB_2
+//#define EASY_NUMS
 
-#if defined ASCII
-	//ASCII-table
-	int i = 0;
-	while (i < 256)
-	{
-		cout << i << '-' << char(i) << endl;
-		i++;
+void main() {
+#ifdef FACTORIAL
+	int n, res = 1;
+	cout << "Enter number: "; cin >> n;
+	while (n > 32 or n < 0) {
+		cout << "Programm would not work with number bigger than 32 and with numbers smaller than 0" << endl;
+		cout << "Entre new number: "; cin >> n;
 	}
-#endif
-
-#if defined CHESS_BOARD
-	//Шахматная доска
-	setlocale(LC_ALL, "Russian");
-
-	int size, i = 0;
-	bool white_cell = true;
-	cout << "\tПрограмма вывода шахматной доски.";
-	cout << "Введите размер шахматной доски: "; cin >> size;
-
-	// 1 raw
-	cout << '\t' << char(201);
-	for (int i = 1; i < (size + 2); i++) cout << char(205) << char(205);
-	cout << char(205) << char(187) << endl;
-	// 2 raw
-	cout << '\t' << char(186) << ' ';
-	for (int i = 1; i < (size + 1); i++) cout << ' ' << char(64 + i);
-	cout << "  " << char(186) << endl;
-	// raws
-	for (int i = 0; i < size; i++)
-	{
-		cout << '\t' << char(186) << size - i << ' ';
-		for (int j = 1; j <= size; j++)
-		{
-			if (white_cell)	cout << char(219) << char(219); //белая клетка - char(219)
-			else cout << char(176) << char(176);			//темная клетка - char(176)
-			white_cell = !white_cell;
-		}
-		cout << " " << char(186);
-		cout << endl;
-		if (!(size % 2)) white_cell = !white_cell;
+	if (n == 0)
+		cout << "Result = " << 1;
+	else {
+		for (int i = 1; i < n + 1; i++)
+			res *= i;
+		cout << "Result = " << res;
 	}
-	// last raw
-	cout << '\t' << char(200);
-	for (int i = 1; i < (size + 2); i++) cout << char(205) << char(205);
-	cout << char(205) << char(188) << endl;
-#endif
+#endif //FACTORIAL
 
-#if defined CHESS_BOARD_BY_STARS
-	//Шахматная доска из звездочек
-	int size, sizeCell, i = 0;
-	char dark = '*', light = ' ', cell;//char 219 - light, ' ' - dark
-	cout << "\tChess board by stars.\n";
-	cout << "Input size of board: "; cin >> size;
-	cell = (size % 2) ? light : dark;
-	sizeCell = size;
-	// 1 raw - frame
-	cout << char(201);
-	for (int i = 0; i < (2 * sizeCell * size + 2); i++) cout << char(205);
-	cout << char(187) << endl;
-	// 2 raw
-	cout << char(186) << ' ';
-	//(j == size / 2) ? cout << (size - i) : cout << ' ';
-	for (int i = 0; i < (2 * sizeCell * size + 1); i++)
-	{
-		((i) % (2 * size) == sizeCell) ? cout << char(65 + i / (2 * size)) : cout << ' ';
-	}
-	cout << char(186) << endl;
-	// raws of cells
-	for (int i = 0; i < size; i++) //all board
-	{
-		for (int j = 0; j < size; j++) // raws of cells
-		{
-			cout << char(186);
-			(j == size / 2) ? cout << (size - i) : cout << ' ';
-			for (int m = 0; m < sizeCell; m++) //raws of pixels
-			{
-				for (int k = 0; k < sizeCell; k++) // pixels of cells
-				{
-					cout << cell << cell;
-				}
-				cell = (cell == dark) ? light : dark;
-			}
-			cout << " " << char(186);
+#ifdef POWER
+	double x; int exp;
+	cout << "Enter number: "; cin >> x; cout << "Enter exponent: "; cin >> exp;
+	cout << power(x, exp);
+#endif //POWER
+
+#ifdef ASCII_16
+	setlocale(LC_ALL, "C");
+	for (int i = 0; i < 256; i++) {
+		cout << char(i) << " ";
+		if (i % 16 == 0)
 			cout << endl;
-			cell = ((sizeCell % 2 && cell == dark) || (!(sizeCell % 2) && cell == light)) ? light : dark;
-		}
-		cell = ((size % 2 && cell == light) || (!(size % 2) && cell == light)) ? dark : light;
 	}
-	// last raw - frame
-	cout << char(200);
-	for (int i = 0; i < (2 * sizeCell * size + 2); i++) cout << char(205);
-	cout << char(188) << endl;
-#endif
+#endif //ASCII_16
 
-#if defined LUCKY_TICKET_IF_ELSE
-	// Счастливый билет с помощью условия "if_else"
-	setlocale(LC_ALL, "Russian");
-
-	char n1, n2, n3, n4, n5, n6;
-	cout << "/tПрограмма проверки счастливого билета. (С применением метода \"If - else\")\n";
-	cout << "Проверка выполнится после ввода всех 6 цифр номера билета и нажатия \"Enter\"\n";
-	cout << "Начальные нули вводить обязательно!\n";
-	cout << "Лишние введенные цифры, начиная с седьмой, учитываться не будут.";
-	cout << "Введите номер билета (6 цифр): "; cin >> n1 >> n2 >> n3 >> n4 >> n5 >> n6;
-	if (n1 + n2 + n3 == n4 + n5 + n6)
-	{
-		cout << "Поздравляем! Ваш билет - СЧАСТЛИВЫЙ!";
-	}
-	else
-	{
-		cout << "К сожалению, Ваш билет обычный. Попробуйте в другой раз.";
-	}
-#endif
-
-#if defined LUCKY_TICKET_WHILE
-	// Счастливый билет с помощью цикла "while"
-	setlocale(LC_ALL, "Russian");
-
-	int ticket, sum1 = 0, sum2, count = 0;
-	cout << "/tПрограмма проверки счастливого билета. (с использованием метода \"While\")\n";
-	cout << "Проверка выполнится после ввода всех 6 цифр номера билета и нажатия \"Enter\"\n";
-	cout << "При вводе лишних цифр будет предупреждение.\n";
-	cout << "При вводе меньшего количества цифр недостающие будут считаться начальными нулями.";
-	cout << "Введите номер билета (6 цифр): "; cin >> ticket;
-	if (ticket > 999999)
-	{
-		cout << "ПРЕДУПРЕЖДЕНИЕ! В билете должно быть только 6 цифр. Вы ввели лишние цифры.";
-	}
-	while (ticket > 0 && ticket < 1000000)
-	{
-		sum1 += ticket % 10;
-		ticket /= 10;
-		count++;
-		if (count == 3)
-		{
-			sum2 = sum1;
-			sum1 = 0;
-		}
-	}
-	if (sum1 == sum2)
-	{
-		cout << "ПОЗДРАВЛЯЕМ! Ваш билет СЧАСТЛИВЫЙ.";
-	}
-	else
-	{
-		cout << "К сожалению, Ваш билет обычный. Попробуйте в другой раз.";
-	}
-
-#endif
-
-#if defined PALINDROM
-	//Палиндром
-	setlocale(LC_ALL, "Russian");
-
-	int input, number, output = 0;
-	cout << "введите число, которое нужно проверить на ПАЛИНДРОМ: "; cin >> input;
-	number = input;
-	while (number > 0)
-	{
-		output = output * 10 + number % 10;
-		number /= 10;
-	}
-	cout << "Вы ввели: " << input << " обратная запись этого числа: " << output << endl;
-	if (input == output)
-	{
-		cout << "Число является ПАЛИНДРОМОМ.";
-	}
-	else
-	{
-		cout << "Число НЕ является палиндромом.";
-	}
-#endif
-
-#if defined FACTORIAL_RECOURSE
-	// Факториал рекурсивный (повторяю код из одного из старых занятий)
-	setlocale(LC_ALL, "Russian");
-	cout << "Задача 2 \"Факториал числа\" вариант 2\n";
-	short number, number_in;
-	long long factorial = 1;
-	long double factorial_big = 1;
-	cout << "Введите число, факториал которого требуется найти: ";
-	cin >> number;
-	number_in = number;
-	if (number < 0)
-	{
-		cout << "\nФакториал отрицательного числа не может быть определён.\n";
-	}
-	else
-	{
-		if (number > 20)
-			while (number != 0)
-				factorial_big *= number--;
+#ifdef FIB_1
+	int n;
+	cout << "Enter number: "; cin >> n;
+	for (int i = 0; i >= 0; i++) {
+		int res = fibonachi(i);
+		if (res <= n)
+			cout << res << "\t";
 		else
-			while (number != 0)
-				factorial *= number--;
-		cout << "\nФакториал числа " << number_in << " равен: ";
-		number_in > 20 ? cout << factorial_big : cout << factorial;
-		cout << ".\n";
+			break;
 	}
-#endif
+#endif //FIB_1
 
-#if defined BINARY_CODE
-	// Перевод десятичного числа в двоичное
-	setlocale(LC_ALL, "Russian");
-
-	int input, output = 0, input_source, size2 = 2, digit = 1;
-	cout << "Введите десятичное число, которое требуется преобразовать в двоичное: "; cin >> input_source;
-	input = input_source;
-	while (input / size2 > 0)
-	{
-		output = input % size2 * digit + output;
-		input /= size2;
-		digit *= 10;
+#ifdef FIB_2
+	int n;
+	cout << "Enter number: "; cin >> n;
+	for (int i = 0; i < n; i++) {
+		cout << fibonachi(i) << " ";
 	}
-	output = input % size2 * digit + output;
-	input /= size2;
-	digit *= 10;
-	cout << "Число " << input_source << " в двоичном представлении выглядит так: " << output << ".\n";
-#endif
+#endif //FIB_2
 
-#if defined TASK_0
-	/* Вывести в консоль фигуры, представленные ниже
-	*****
-	*****
-	*****
-	*****
-	*****
-	*/
-	int size = 5;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-		{
-			cout << '*';
-		}
-		cout << endl;
+#ifdef EASY_NUMS
+	int n;
+	cout << "Enter number: "; cin >> n;
+	for (int i = 1; i <= n; i++) {
+		if (easy_num(i) == true)
+			cout << i << "\t";
 	}
+#endif //EASY_NUMS
+}
 
-#endif
 
-#if defined TASK_1
-	/* Вывести в консоль фигуры, представленные ниже
-	*
-	**
-	***
-	****
-	*****
-	*/
-	int size = 5;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j <= i; j++)
-		{
-			cout << '*';
-		}
-		cout << endl;
-	}
-#endif
+double power(double a, int n) {
+	if (n == 0)
+		return 1;
+	else if (n < 0)
+		return 1 / (a * (power(a, -n - 1)));
+	else
+		return a * power(a, n - 1);
+}
 
-#if defined TASK_2
-	/* Вывести в консоль фигуры, представленные ниже
-	*****
-	****
-	***
-	**
-	*
-	*/
-	int size = 5;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size - i; j++)
-		{
-			cout << '*';
-		}
-		cout << endl;
-	}
-#endif
 
-#if defined TASK_3
-	/* Вывести в консоль фигуры, представленные ниже
-	*****
-	 ****
-	  ***
-	   **
-		*
-	*/
-	int size = 5;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < i; j++)
-		{
-			cout << ' ';
-		}
-		for (int k = i; k < size; k++)
-		{
-			cout << '*';
-		}
-		cout << endl;
-	}
-#endif
+int fibonachi(int n)
+{
+	if (n <= 1)
+		return n;
+	else
+		return fibonachi(n - 1) + fibonachi(n - 2);
+}
 
-#if defined TASK_4
-	/* Вывести в консоль фигуры, представленные ниже
-		*
-	   **
-	  ***
-	 ****
-	*****
-	*/
-	int size = 5;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size - i - 1; j++)
-		{
-			cout << ' ';
+bool easy_num(int n) {
+	int num = int(pow(n, 0.5)) + 1;
+	bool f = true;
+	for (int i = 2; i < num; i++) {
+		if (n % i == 0) {
+			f = false;
+			break;
 		}
-		for (int k = size - i; k <= size; k++)
-		{
-			cout << '*';
-		}
-		cout << endl;
 	}
-#endif
-
-#if defined TASK_5
-	/* Вывести в консоль фигуры, представленные ниже
-		/\
-	   /  \
-	  /    \
-	 /      \
-	/        \
-	\        /
-	 \      /
-	  \    /
-	   \  /
-		\/
-	*/
-	int size = 5;
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size - i - 1; j++)
-		{
-			cout << ' ';
-		}
-		cout << '/';
-		for (int k = 0; k < 2 * i; k++)
-		{
-			cout << ' ';
-		}
-		cout << '\\' << endl;
-	}
-	for (int l = 0; l < size; l++)
-	{
-		for (int m = 0; m < l; m++)
-		{
-			cout << ' ';
-		}
-		cout << '\\';
-		for (int n = 0; n < 2 * (size - l - 1); n++)
-		{
-			cout << ' ';
-		}
-		cout << '/' << endl;
-	}
-#endif
+	return f;
 }
