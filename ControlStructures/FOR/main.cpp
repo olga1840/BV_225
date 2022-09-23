@@ -8,6 +8,7 @@ using std::endl;
 //#define FACTORIAL
 //#define POWER
 //#define ASCII
+//#define FIBONACCI_1
 
 void main()
 {
@@ -67,6 +68,7 @@ void main()
 	cout << "Вот и сказочке конец" << endl;
 #endif // ASCII
 
+#ifdef FIBONACCI_1
 	int n;
 	cout << "Введите предельное число: "; cin >> n;
 	for (int a = 0, b = 1, c = a + b; a < n; a = b, b = c, c = a + b)
@@ -74,4 +76,22 @@ void main()
 		cout << a << "\t";
 	}
 	cout << endl;
+#endif // FIBONACCI_1
+
+	int n;
+	cout << "Введите предельное число: "; cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		bool simple = true;	//предполагаем, что число простое,
+		//но это нужно проверить:
+		for (int j = 2; j < i; j++)
+		{
+			if (i % j == 0)
+			{
+				simple = false;
+				break;
+			}
+		}
+		if (simple)cout << i << "\t";
+	}
 }
