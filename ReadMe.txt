@@ -9,6 +9,8 @@ TODO:
 2. Используя вложенные циклы вывести на экран следующие фигуры:
    https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
    Размер фигуры должен вводить пользователь.
+3. https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/ChessBoard.jpg
+4. https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/HardChess.jpg
 
 DONE:
 1. Пользователь вводит число с клавиатуры, а программа вычисляет факториал этого числа;

@@ -5,6 +5,7 @@ using namespace std;
 
 //for-ы
 //#define CLOCK
+//#define MULTIPLICATION_TABLE
 
 void main()
 {
@@ -29,6 +30,7 @@ void main()
 	}
 #endif // CLOCK
 
+#ifdef MULTIPLICATION_TABLE
 	for (int i = 1; i <= 10; i++)
 	{
 		cout << "Таблица умножения на " << i << ":\n";
@@ -41,6 +43,24 @@ void main()
 			if (i*j < 100)cout << " ";
 			if (i*j < 10)cout << " ";
 			cout << i * j << endl;
+		}
+		cout << endl;
+	}
+#endif // MULTIPLICATION_TABLE
+
+	for (int i = 1; i <= 10; i++)
+	{
+		for (int j = 1; j <= 10; j++)
+		{
+			cout.width(5);	//это свойство задает ширину поля вывода в знакопозициях.
+			//если вывод был меньше заданой ширины, то следующее значение выведится за пределами заданного поля
+			//в даном случае 5 знакопозиций.
+			//Если выводимое значение требует больше знакопозиций, то оно займет больше места на экране
+			//cout.width(x); неявно включает выравниевание по правому краю поля заданной ширины
+			//cout << right;
+			//по умолчанию вывод выравнивается по левому краю
+			//cout << left;
+			cout << i * j;
 		}
 		cout << endl;
 	}
