@@ -4,6 +4,9 @@ https://www.youtube.com/watch?v=owJLioIXPds&list=PLeqyOOqxeiIOn6FFT2a2xBVF9UpViJ
 TOREAD:
 https://www.softelectro.ru/ieee754.html
 
+Book:
+https://drive.google.com/drive/folders/1mIhAKMp5-Jpy6s5X8u924tRCXFEdHE_z
+
 TODO:
 1. Вывести на экран таблицу Пифагора;
 2. Используя вложенные циклы вывести на экран следующие фигуры:

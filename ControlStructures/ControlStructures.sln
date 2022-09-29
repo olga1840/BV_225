@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Menu", "Menu\Menu.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Geometria", "Geometria\Geometria.vcxproj", "{D2741F7B-466E-45CE-9F90-145D057DF91F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChessBoard", "ChessBoard\ChessBoard.vcxproj", "{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{D2741F7B-466E-45CE-9F90-145D057DF91F}.Release|x64.Build.0 = Release|x64
 		{D2741F7B-466E-45CE-9F90-145D057DF91F}.Release|x86.ActiveCfg = Release|Win32
 		{D2741F7B-466E-45CE-9F90-145D057DF91F}.Release|x86.Build.0 = Release|Win32
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Debug|x64.ActiveCfg = Debug|x64
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Debug|x64.Build.0 = Debug|x64
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Debug|x86.ActiveCfg = Debug|Win32
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Debug|x86.Build.0 = Debug|Win32
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Release|x64.ActiveCfg = Release|x64
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Release|x64.Build.0 = Release|x64
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Release|x86.ActiveCfg = Release|Win32
+		{5CEF2E5F-5FDE-469E-B1AE-147A6B23EA91}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
