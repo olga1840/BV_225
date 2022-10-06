@@ -8,6 +8,10 @@ Book:
 https://drive.google.com/drive/folders/1mIhAKMp5-Jpy6s5X8u924tRCXFEdHE_z
 
 TODO:
+Выбрать пять любых проектов, сделать из них репозитории и залить эти репозитории на GitHub.
+В качестве отчета прислать ссылку на свой GitHub;
+
+DONE:
 1. Вывести на экран таблицу Пифагора;
 2. Используя вложенные циклы вывести на экран следующие фигуры:
    https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
