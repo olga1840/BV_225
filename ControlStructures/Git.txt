@@ -1,0 +1,17 @@
+VCS - Version Control System
+SVN
+Subversion
+Mercury
+....
+....
+Git	!= GitHub
+Git - система контроля версий
+GitHub - облачное хранилище исходных кодов
+
+Репозиторий (Repository) - это хранилище исходных кодов.
+fetch, pull и push
+
+Commit - это контрольная точка.
+.gitignore
+
+Commit message
