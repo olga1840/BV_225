@@ -1,4 +1,5 @@
 #include<iostream>
+#include<Windows.h>
 using namespace std;
 
 void main()
@@ -16,6 +17,7 @@ void main()
 	//Циклический сдвиг массива:
 	int number_of_shifts;
 	cout << "Введите количество сдвигов: "; cin >> number_of_shifts;
+	//number_of_shifts = n - number_of_shifts % n;
 	for (int i = 0; i < number_of_shifts; i++)
 	{
 		int buffer = arr[0];
@@ -24,13 +26,14 @@ void main()
 			arr[i] = arr[i + 1];
 		}
 		arr[n - 1] = buffer;
-	}
 
-	//Вывод сдвинутого массива на экран:
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
+		system("CLS");//CLS - Clear Screen
+		//Вывод сдвинутого массива на экран:
+		for (int i = 0; i < n; i++)
+		{
+			cout << arr[i] << "\t";
+		}
+		cout << endl;
+		Sleep(200);	//Приостанавливает выполнение кода на заданное число миллисекунд
 	}
-	cout << endl;
-
 }
