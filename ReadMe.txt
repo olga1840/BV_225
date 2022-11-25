@@ -3,11 +3,18 @@ https://www.youtube.com/watch?v=owJLioIXPds&list=PLeqyOOqxeiIOn6FFT2a2xBVF9UpViJ
 
 TOREAD:
 https://www.softelectro.ru/ieee754.html
+https://www.ixbt.com/cpu/x86-cpu-faq-2006.shtml
+https://www.ixbt.com/cpu/cpu-digest-2009.shtml
 
 Book:
 https://drive.google.com/drive/folders/1mIhAKMp5-Jpy6s5X8u924tRCXFEdHE_z
+https://github.com/AllonsiWho/Book
 
 TODO:
+В проекте Functions\Arrays все сущестующие функции перегрузить для двумерных массивов 
+типа double, float и char.
+
+DONE:
 1. Написать рекурсивную функцию, которая принимает число, и возвращает Факториал этого числа;
 2. Написать Рекурсивную функцию, которая возводит число в степень;
 3. Написать рекурсивную функцию, которая выводит на экран ряд Фибоначчи до заданного предела;
@@ -31,7 +38,7 @@ TODO:
 						//и выводит на экран количество повторений
 
 2. Перегрузить функции в проекте Functions\Arrays для типов данных double, float и char,
-   написать проверчный код для всех типов;
+   написать проверочный код для всех типов;
 
 
 DONE:
