@@ -1,5 +1,4 @@
-#include<iostream>
-using namespace std;
+#include"stdafx.h"
 
 #define delimiter "\n----------------------------------------------------------\n"
 
